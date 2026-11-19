@@ -1,34 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 93, in script
-    show expression chosen_image at left with small_scale
-TypeError: got an unexpected keyword argument 'old_widget'
+  File "renpy/common/00start.rpy", line 288, in script
+    python:
+ScriptError: could not find label 'start'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 93, in script
-    show expression chosen_image at left with small_scale
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/ast.py", line 1367, in execute
-    renpy.exports.with_statement(trans, paired=paired)
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/exports/statementexports.py", line 257, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/display/core.py", line 1578, in do_with
-    return self.interact(trans_pause=True,
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/display/core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/display/core.py", line 2666, in interact_core
-    trans = instantiate_transition(None, old_root, layers_root)
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/display/core.py", line 2575, in instantiate_transition
-    trans = self.ongoing_transition[layer](
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/atl.py", line 623, in __call__
-    new_scope = signature.apply(args, kwargs, partial=True, apply_defaults=False)
-  File "/Users/mona_mm/Documents/Coding/Brebeuf Hx/renpy-8.3.4-sdk/renpy/parameter.py", line 384, in apply
-    raise TypeError(
-TypeError: got an unexpected keyword argument 'old_widget'
+  File "C:\Users\cihao\Downloads\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\cihao\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 652, in main
+    run(restart)
+  File "C:\Users\cihao\Downloads\renpy-8.3.4-sdk\renpy\main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\cihao\Downloads\renpy-8.3.4-sdk\renpy\execution.py", line 958, in run_context
+    context.run()
+  File "renpy/common/00start.rpy", line 288, in script
+    python:
+  File "C:\Users\cihao\Downloads\renpy-8.3.4-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'start'.
 
-macOS-13.2.1-arm64-arm-64bit arm64
+Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.4.24120703
- 1.0
-Sat Jan 11 10:17:27 2025
+ 
+Sat Jan 11 13:31:19 2025
